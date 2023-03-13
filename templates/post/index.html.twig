@@ -12,6 +12,7 @@
                 <th>Titre</th>
                 <th>Message</th>
                 <th>DatePublication</th>
+                <th>Auteur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{ post.titre }}</td>
                 <td>{{ post.message }}</td>
                 <td>{{ post.datePublication ? post.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ post.auteur }}</td>
                 <td>
                     <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
                     <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>

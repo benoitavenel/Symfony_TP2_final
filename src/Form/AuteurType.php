@@ -2,28 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Post;
+use App\Entity\Auteur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PostType extends AbstractType
+class AuteurType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre')
-            ->add('message')
-            ->add('datePublication')
-            ->add('PostCategory')
-            ->add('auteur')
+            ->add('nom')
+            ->add('prenom')
+            ->add('email')
+            ->add('droit')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Post::class,
+            'data_class' => Auteur::class,
         ]);
     }
 }
